@@ -78,9 +78,9 @@ function handleSubmit(e) {
         id: Date.now(),
         picture: imgInput.src || "./img/pic1.png",
         date: document.getElementById("sDate").value,
-        location: document.getElementById("location").value,
-        callType: document.getElementById("call").value,
         companyName: document.getElementById("company").value,
+        callType: document.getElementById("call").value,
+        location: document.getElementById("location").value,
         phone: document.getElementById("phone").value,
         email: document.getElementById("email").value,
         customerSegment: document.getElementById("segment").value,
@@ -161,9 +161,9 @@ function createTableRow(staff, index) {
                 <td>${index + 1}</td>
                 <td><img src="${staff.picture}" alt="" width="40" height="40"></td>
                 <td>${staff.date}</td>
-                <td>${staff.location}</td>
-                <td>${staff.callType}</td>
                 <td>${staff.companyName}</td>
+                <td>${staff.callType}</td>
+                <td>${staff.location}</td>
                 <td>${staff.phone}</td>
                 <td>${staff.email}</td>
                 <td>${staff.customerSegment}</td>
@@ -188,9 +188,9 @@ function editInfo(index) {
     submitBtn.textContent = "Update";
 
     document.getElementById("sDate").value = staff.date;
-    document.getElementById("location").value = staff.location;
-    document.getElementById("call").value = staff.callType;
     document.getElementById("company").value = staff.companyName;
+    document.getElementById("call").value = staff.callType;
+    document.getElementById("location").value = staff.location;
     document.getElementById("phone").value = staff.phone;
     document.getElementById("email").value = staff.email;
     document.getElementById("segment").value = staff.customerSegment;
