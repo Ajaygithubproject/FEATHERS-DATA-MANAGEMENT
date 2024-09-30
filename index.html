@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100..900&family=Frijole&display=swap" rel="stylesheet">
+
+    <title>Feathers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+        
+             
+<header class="fixed-header">
+    <h1>Feathers Telecom Service PVT LTD</h1>
+</header>
+
+        
+<body>
+    
+    <div class="container">
+
+        <header>
+            <h1></h1> 
+
+            <div class="filterEntries">
+                <div class="entries">
+                    Show <select name="" id="table_size">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select> entries
+                </div>
+
+                <div class="filter">
+                    <label for="search">Search:</label>
+                    <input type="search" name="" id="search" placeholder="Enter name">
+                </div>
+            </div>
+
+            <div class="addMemberBtn">
+                <button>New </button>
+            </div>
+
+        </header>
+
+
+        <table>
+
+            <thead>
+                <tr class="heading">
+                    <th>SL No</th>
+                    <th>Picture</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Call Type</th>
+                    <th>Company Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Customer Segment</th>
+                    <th>Authorised Person</th>
+                    <th>Designation</th>
+                    <th>Required</th>
+                    <th>Address</th>
+                    <th>Remarks</th>
+                    <th>Additional Information</th>
+                </tr>
+            </thead>
+
+
+            <tbody class="userInfo">
+                            </tbody>
+
+        </table>
+
+
+        <footer>
+            <span class="showEntries">Showing 1 to 10 of 50 entries</span>
+            <div class="pagination">
+                 <button>Prev</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>Next</button>
+            </div>
+        </footer>
+    </div>
+
+
+    <!--Popup Form-->
+
+    <div class="dark_bg">
+
+        <div class="popup">
+            <header>
+                <h2 class="modalTitle">Fill the Form</h2>
+                <button class="closeBtn">&times;</button>
+            </header>
+        
+            <div class="body">
+                <form action="#" id="myForm" class="form">
+                    
+                    <div class="inputFieldContainer">
+                        <h3>Add image</h3>
+                    <div class="imgholder">
+                        <label for="uploadimg" class="upload">
+                            <input type="file" name="" id="uploadimg" class="picture">
+                            <i class="fa-solid fa-plus"></i>
+                        </label>
+                        <img src="./img/pic1.png" alt="" class="img">
+                    </div>
+        
+                   
+                        <div class="form_control">
+                            <label for="sDate">Date:</label>
+                            <input type="date" name="" id="sDate" required>
+                        </div>
+        
+                        <div class="">
+                            <div class="form_control">
+                                <label for="location">Location:</label>
+                                <input type="text" name="" id="location" required>
+                            </div>
+                            <div class="form_control">
+                                <label for="call">Call Type:</label>
+                                <input type="text" name="" id="call" required>
+                            </div>
+                        </div>
+        
+                        <div class="">
+                            <div class="form_control">
+                                <label for="company">Company Name:</label>
+                                <input type="text" name="" id="company" required>
+                            </div>
+                            <div class="form_control">
+                                <label for="phone">Phone Number:</label>
+                                <input type="number" name="" id="phone" required>
+                            </div>
+                        </div>
+        
+                        <div class="">
+                            <div class="form_control">
+                                <label for="email">Email:</label>
+                                <input type="email" name="" id="email" required>
+                            </div>
+                            <div class="form_control">
+                                <label for="segment">Customer Segment:</label>
+                                <input type="text" name="" id="segment" required>
+                            </div>
+                        </div>
+        
+                        <div class="">
+                            <div class="form_control">
+                                <label for="aperson">Authorised Person:</label>
+                                <input type="text" name="" id="aperson" required>
+                            </div>
+                            <div class="form_control">
+                                <label for="designation">Designation:</label>
+                                <input type="text" name="" id="designation" required>
+                            </div>
+                        </div>
+        
+                        <div class="">
+                            <div class="form_control">
+                                <label for="required">Required:</label>
+                                <input type="text" name="" id="required" required>
+                            </div>
+                            <div class="form_control">
+                                <label for="address">Address:</label>
+                                <input type="textarea" name="" id="address" required>
+                            </div>
+                        </div>
+                        
+        
+                            <div class="">
+                            <div class="form_control">
+                                <label for="remark">Remarks:</label>
+                                <input type="text" name="" id="remark" required>
+                            </div>
+                            <div class="form_control">
+                                <label for="ainformation">Additional Information:</label>
+                                <input type="text" name="" id="ainformation" required>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            
+            <footer class="popupFooter">
+                <button form="myForm" class="submitBtn">Submit</button>
+             </footer>
+        </div>
+        
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

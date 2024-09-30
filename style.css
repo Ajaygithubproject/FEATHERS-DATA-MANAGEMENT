@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@100;200;300;400&display=swap');
+
+:root {
+    --dark1: #ff00004d;
+    --dark2: #d2d2d2;
+    --dark3: #0080ff;
+    --dark4: #cbddef;
+    --dark5: #738ed2;
+    --dark6: #fcfcfc;
+    --dark7: #ffffff;
+    --dark8: #000000;
+    --dark9: #ffffff;
+    --red1: #ff0008;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background: linear-gradient(var(--red1) 50%);
+}
+
+
+
+.fixed-header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: red;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000; /* Ensures the header stays on top */
+}
+.fixed-header h1{
+    
+    font-family: "Big Shoulders Stencil Display", sans-serif;
+    color: #ffffff;
+}
+.container {
+        padding: 40px;
+        border-radius: 10px;
+        margin: 10px;
+        margin-top: 50px;
+        width: 100%; /* Responsive width */
+        max-width: 12000px; /* Max width for larger screens */
+        max-height: 80vh; /* Max height for the container */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+    
+
+
+.container header .filterEntries {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filterEntries .entries {
+    color: var(--dark8);
+}
+
+.filterEntries .entries select,
+.filterEntries .filter input {
+    padding: 7px 10px;
+    border: 1px solid var(--dark6);
+    color: var(--dark8);
+    background: var(--dark4);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.filterEntries .entries select {
+    padding: 5px 10px;
+}
+
+.filterEntries .filter {
+    display: flex;
+    align-items: center;
+}
+
+.filter label {
+    color: var(--dark8);
+    margin-right: 5px;
+}
+
+.filter input:focus {
+    border-color: var(--dark7);
+}
+
+.container header .addMemberBtn {
+    margin-bottom: 15px;
+}
+
+header .addMemberBtn button,
+.popup header .closeBtn,
+.popup footer .submitBtn {
+    padding: 9px 14px;
+    color: var(--dark8);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--dark6);
+    background: var(--dark4);
+    border-radius: 5px;
+}
+
+.addMemberBtn button:hover {
+    background: var(--dark5);
+}
+
+.container table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%; /* Make the table responsive */
+}
+
+table .heading {
+    background: var(--dark5);
+    color: var(--dark8);
+}
+
+table .heading th:hover {
+    background: var(--dark4);
+    transition: 0.3s;
+}
+
+table tr th,
+table tr td {
+    padding: 3px 15px;
+    color: var(--dark8);
+    vertical-align: middle;
+}
+
+table tr th {
+    padding: 12px 15px;
+}
+
+table tr td:nth-child(1),
+table tr td:nth-child(2) {
+    text-align: center;
+}
+
+table tr td img {
+    vertical-align: middle;
+}
+
+table tr:hover {
+    cursor: pointer;
+    background: var(--dark9);
+}
+
+table tr td {
+    border-bottom: 1px solid var(--dark6);
+}
+
+table tbody tr:first-child td {
+    border-top: 1px solid var(--dark6);
+}
+
+table tbody tr:nth-child(odd) {
+    background: var(--dark9);
+}
+
+table tbody tr:nth-child(odd) > td:nth-child(3) {
+    background: var(--dark4);
+}
+
+table tr td {
+    font-size: 15px;
+}
+
+table td button {
+    margin: 0 3px;
+    padding: 5px;
+    width: 35px;
+    background: var(--dark5);
+    color: var(--dark8);
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--dark7);
+}
+
+.container footer {
+    margin-top: 25px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container footer span {
+    color: var(--dark8);
+}
+
+footer .pagination {
+    display: flex;
+}
+
+footer .pagination button {
+    width: 40px;
+    padding: 5px 0;
+    color: var(--dark8);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--dark6);
+    border-left: none;
+    margin: 0;
+}
+
+.pagination button:first-child {
+    width: 85px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid var(--dark6);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination button:last-child {
+    width: 85px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination button.active,
+.pagination button:hover {
+    background: var(--red1);
+}
+
+.pagination button.act:first-child {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.pagination button.act:last-child {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+table tr .empty {
+    padding: 6px;
+    background: var(--dark9);
+}
+
+/* Popup Form */
+
+.dark_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup {
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+    background: var(--dark6);
+    transition: 0.4s;
+    user-select: none;
+    transform: scale(0.7);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--dark7);
+    padding: 10px 20px;
+}
+
+.popup header .closeBtn {
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0 15px;
+}
+
+.popup header .closeBtn:hover,
+.popup footer .submitBtn:hover {
+    
+    transition: 0.3s;
+}
+
+.popup footer {
+    border-top: 1px solid var(--dark7);
+    padding: 12px 20px;
+    text-align: right;
+}
+
+.popup form {
+    padding: 10px 20px;
+    display: flex;
+    
+}
+
+.popup .imgholder {
+    width: 300px;
+    height: 150px;
+    box-shadow: 0 0 5px rgba(230, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 15px;
+}
+
+.popup .imgholder .upload {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.imgholder:hover .upload {
+    display: flex;
+}
+
+.imgholder .upload input {
+    display: none;
+}
+
+.imgholder .upload i {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.imgholder .img {
+    width: 100%;
+    height: 100%;
+}
+
+form .inputFieldContainer .nameField,
+form .inputFieldContainer .ageCityField,
+form .inputFieldContainer .postSalary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1px;
+}
+
+form .inputFieldContainer .nameField input,
+form .inputFieldContainer .ageCityField input,
+form .inputFieldContainer .postSalary input {
+    width: 200px;
+}
+
+.inputFieldContainer .form_control {
+    margin: 10px 0;
+}
+
+.inputFieldContainer .form_control label {
+    display: block;
+    color: var(--dark8);
+    margin-bottom: 5px;
+}
+
+.form_control input {
+    padding: 10px;
+    border: 1px solid var(--dark6);
+    color: var(--dark8);
+    background: var(--dark4);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.form_control input:focus,
+.form_control input:valid {
+    border-color: var(--dark7);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
+}
+
+.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Make container wider on smaller screens */
+    }
+
+    .filterEntries {
+        flex-direction: column; /* Stack elements */
+        align-items: flex-start;
+    }
+
+    .filterEntries .entries,
+    .filterEntries .filter {
+        width: 100%; /* Full width */
+        margin-bottom: 10px; /* Spacing */
+    }
+
+    table tr th,
+    table tr td {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    footer .pagination button {
+        width: 35px; /* Smaller buttons */
+        font-size: 14px;
+    }
+
+    footer .pagination button:first-child,
+    footer .pagination button:last-child {
+        width: auto; /* Adjust width */
+    }
+}
+
+@media (max-width: 480px) {
+    header .addMemberBtn button,
+    .popup header .closeBtn,
+    .popup footer .submitBtn {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    table tr td button {
+        width: 30px; /* Smaller buttons in table */
+    }
+
+    form .inputFieldContainer .nameField input,
+    form .inputFieldContainer .ageCityField input,
+    form .inputFieldContainer .postSalary input {
+        width: 150px; /* Smaller input fields */
+    }
+
+    .popup .imgholder {
+        width: 300px; /* Adjust image holder size */
+        height: 300px;
+    }
+    
+    
+}
+
+
+
+
+
+
+.popup {
+    padding: 20px;
+    max-width: 600px; /* Adjust max width as necessary */
+    width: 90%; /* Full width on smaller screens */
+    overflow-y: auto; /* Enable scrolling if content is too long */
+    max-height: 80vh; /* Limit height to avoid overflow */
+}
+
+.inputFieldContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between elements */
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between label and input */
+}
+
+.flex {
+    display: flex; /* Use flex layout */
+    flex-direction: row; /* Row layout for these groups */
+    gap: 10px; /* Space between columns */
+   width: 50%;
+}
+
+.form_control {
+    flex: 1; /* Allow inputs to grow */
+}
+
+.imgholder {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between the input and image */
+    margin-bottom: 20px; /* Add space below the image upload section */
+}
+
+.upload {
+    cursor: pointer; /* Indicate that the label is clickable */
+}
+
+.picture {
+    display: none; /* Hide the file input */
+}
+
+.img {
+    border: 1px solid #ccc; /* Optional: add a border to the image */
+    border-radius: 4px; /* Optional: rounded corners */
+    width: 50%;
+}
+
+.popupFooter {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    padding: 15px; /* Padding for the footer */
+    border-top: 1px solid #ccc; /* Optional: Add a border for separation */
+}
+
+.closeBtn,
+.submitBtn {
+    padding: 10px 15px; /* Add padding for better touch targets */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as necessary */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.closeBtn {
+    background-color: #f44336; /* Red background for cancel button */
+    color: white;
+    margin-right: 10px; /* Space between buttons */
+}
+
+.closeBtn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.submitBtn {
+    background-color: #4CAF50; /* Green background for submit button */
+    color: white;
+}
+
+.submitBtn:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {
+    .flex {
+        flex-direction: column; /* Stack columns on smaller screens */
+        width: 200%;
+    }
+
+    .form_control {
+        width: 100%; /* Ensure full width for inputs */
+    }
+    .img{
+        width: 100%;
+    }
+    .closeBtn{
+        font-size: 20px;
+    }
+}
